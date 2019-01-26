@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6415730824387674863}
   - component: {fileID: 3515460878518101373}
   m_Layer: 0
-  m_Name: tile2
-  m_TagString: Untagged
+  m_Name: groundStuff1
+  m_TagString: clutter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,7 +67,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2612742aac623ea46bd6c50c5a472946, type: 3}
   m_Color: {r: 0.03146139, g: 0.10736183, b: 0.9528302, a: 1}
   m_FlipX: 0
