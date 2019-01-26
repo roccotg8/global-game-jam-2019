@@ -5,13 +5,13 @@ using UnityEngine;
 public class mapGeneration : MonoBehaviour
 {
     [SerializeField]
-    int width, height, minGroundPasses, maxGroundPasses, groundObjectPercentChance, spawnPercentChance, roomChance;
+    int width, height, minGroundPasses, maxGroundPasses, groundObjectPercentChance, spawnPercentChance, roomChance, npcChance;
 
     [SerializeField]
     float terrainOffset;
 
     [SerializeField]
-    GameObject[] terrainTiles, groundObjects, spawnTile, secretRoom;
+    GameObject[] terrainTiles, groundObjects, spawnTile, secretRoom, npcList;
 
     [SerializeField]
     GameObject hubTile;
@@ -23,6 +23,7 @@ public class mapGeneration : MonoBehaviour
         GenerateSpawnTiles();
         GenerateSecretRoom();
         PlaceHub();
+        PlaceNPC();
     }
 
     void GenerateTerrain()
@@ -66,6 +67,12 @@ public class mapGeneration : MonoBehaviour
         //place the hub in the center of the map
         Vector2 hubPos = new Vector2(((width / 2.0f) * terrainOffset) - (terrainOffset / 2.0f), ((height / 2.0f) * terrainOffset) - (terrainOffset / 2.0f));
         Instantiate(hubTile, hubPos, Quaternion.identity);
+    }
+
+    void PlaceNPC()
+    {
+        //place npcs in the world
+        randomInTilePlacement(npcList, npcChance);
     }
 
     void randomInTilePlacement(GameObject[] objects, int percentChance, bool isRoom = false)
