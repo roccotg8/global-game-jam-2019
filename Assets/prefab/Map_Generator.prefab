@@ -45,8 +45,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 10
   height: 10
-  groundTiles:
-  - {fileID: 789987330441875729, guid: 38aa64c1419064141acb5f7153d172b0, type: 3}
-  - {fileID: 2578637898747363479, guid: 17446845f3c29cf499228b7b362cd5e4, type: 3}
+  minGroundPasses: 2
+  maxGroundPasses: 5
+  groundObjectPercentChance: 50
+  terrainOffset: 4.7
+  terrainTiles:
   - {fileID: 6625294811691108201, guid: 1711de5ab550c8b44b0ca0fb55644bac, type: 3}
-  offset: 1
+  groundObjects:
+  - {fileID: 2578637898747363479, guid: 17446845f3c29cf499228b7b362cd5e4, type: 3}
+  hubTile: {fileID: 789987330441875729, guid: 38aa64c1419064141acb5f7153d172b0, type: 3}
