@@ -8,7 +8,13 @@ public class npc : MonoBehaviour
     GameObject itemToFind;
 
     bool questActive, questComplete;
+
+    GameObject monster = GameObject.FindGameObjectWithTag("monster");
     
+
+    GameObject mapGenerator = GameObject.FindGameObjectWithTag("generator");
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +23,6 @@ public class npc : MonoBehaviour
 
     void SpawnItem()
     {
-        GameObject mapGenerator = GameObject.FindGameObjectWithTag("generator");
         mapGeneration generator = mapGenerator.GetComponent<mapGeneration>();
         generator.GuaranteeOne(itemsToFind);
         itemToFind = GameObject.FindGameObjectWithTag("npcItem");
@@ -27,12 +32,18 @@ public class npc : MonoBehaviour
     {
         questActive = true;
         SpawnItem();
+
+        EnemyBehavior enemy = monster.GetComponent<EnemyBehavior>();
+        enemy.IsHunting(true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "npcItem" && questActive)
         {
+            EnemyBehavior enemy = monster.GetComponent<EnemyBehavior>();
+
+            enemy.IsHunting(false);
             questComplete = true;
             questActive = false;
             Destroy(collision.gameObject);

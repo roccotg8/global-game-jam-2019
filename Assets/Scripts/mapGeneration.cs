@@ -88,11 +88,6 @@ public class mapGeneration : MonoBehaviour
         npcs = GameObject.FindGameObjectsWithTag("npc");
     }
 
-    void EditMapBounds()
-    {
-        
-    }
-
     public void randomInTilePlacement(GameObject[] objects, int percentChance, bool guaranteeOne = false, bool onlyOne = false)
     {
         bool oneExists = false;
