@@ -24,7 +24,6 @@ public class mapGeneration : MonoBehaviour
         height = Random.Range(mapMin, mapMax);
 
         GenerateTerrain();
-        EditMapBounds();
         GenerateGroundObjects();
         GenerateSpawnTiles();
         GenerateSecretRoom();
