@@ -233,12 +233,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5903375620477762023, guid: fc74553330d5c954ebb0f959f0224470,
         type: 3}
-      propertyPath: terrainTiles.Array.data[1]
-      value: 
-      objectReference: {fileID: 2578637898747363479, guid: 17446845f3c29cf499228b7b362cd5e4,
-        type: 3}
-    - target: {fileID: 5903375620477762023, guid: fc74553330d5c954ebb0f959f0224470,
-        type: 3}
       propertyPath: groundObjectsSprites.Array.data[0]
       value: 
       objectReference: {fileID: 2578637898747363479, guid: 17446845f3c29cf499228b7b362cd5e4,

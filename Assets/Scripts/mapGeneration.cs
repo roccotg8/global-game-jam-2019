@@ -16,6 +16,8 @@ public class mapGeneration : MonoBehaviour
     [SerializeField]
     GameObject hubTile;
 
+    public GameObject[] terrain, groundClutter, spawnLocations, hiddenRoom, npcs, hub;
+
     private void Awake()
     {
         GenerateTerrain();
@@ -38,6 +40,7 @@ public class mapGeneration : MonoBehaviour
                 Instantiate(terrainTiles[tile], pos, Quaternion.identity);
             }
         }
+        terrain = GameObject.FindGameObjectsWithTag("ground");
     }
 
     void GenerateGroundObjects()
@@ -48,18 +51,21 @@ public class mapGeneration : MonoBehaviour
         {
             randomInTilePlacement(groundObjects, groundObjectPercentChance);           
         }
+        groundClutter = GameObject.FindGameObjectsWithTag("clutter");
     }
 
     void GenerateSpawnTiles()
     {
         //generate spawn locations
         randomInTilePlacement(spawnTile, spawnPercentChance);
+        spawnLocations = GameObject.FindGameObjectsWithTag("spawn");
     }
 
     void GenerateSecretRoom()
     {
         //generate secret room
         randomInTilePlacement(secretRoom, roomChance, true);
+        hiddenRoom = GameObject.FindGameObjectsWithTag("secretRoom");
     }
 
     void PlaceHub()
@@ -67,15 +73,17 @@ public class mapGeneration : MonoBehaviour
         //place the hub in the center of the map
         Vector2 hubPos = new Vector2(((width / 2.0f) * terrainOffset) - (terrainOffset / 2.0f), ((height / 2.0f) * terrainOffset) - (terrainOffset / 2.0f));
         Instantiate(hubTile, hubPos, Quaternion.identity);
+        hub = GameObject.FindGameObjectsWithTag("hub");
     }
 
     void PlaceNPC()
     {
         //place npcs in the world
         randomInTilePlacement(npcList, npcChance);
+        npcs = GameObject.FindGameObjectsWithTag("npc");
     }
 
-    void randomInTilePlacement(GameObject[] objects, int percentChance, bool isRoom = false)
+    public void randomInTilePlacement(GameObject[] objects, int percentChance, bool onlyOne = false)
     {
         for (int x = 0; x < width; x++) //iterate through x values of the map
         {
@@ -90,9 +98,9 @@ public class mapGeneration : MonoBehaviour
 
                     Vector2 pos = new Vector2((x * terrainOffset) + inTileOffsetX, (y * terrainOffset) + inTileOffsetY);  //sets position of ground object
 
-                    Instantiate(objects[tile], pos, Quaternion.identity);
+                    GameObject currentItem = Instantiate(objects[tile], pos, Quaternion.identity);
 
-                    if(isRoom)
+                    if(onlyOne)
                     {
                         return;
                     }
