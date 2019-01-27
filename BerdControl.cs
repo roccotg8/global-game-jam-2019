@@ -61,11 +61,11 @@ public class BerdControl : MonoBehaviour
 
         }
 
-        //Drag Item Key/Button
-        if (Input.GetButtonDown("Drag"))
-        {
-            Debug.Log("Drag");
-        }
+        ////Drag Item Key/Button
+        //if (Input.GetButtonDown("Drag"))
+        //{
+        //    Debug.Log("Drag");
+        //}
 
         //Roll or Dodge Key/Button
         if (Input.GetButtonDown("Dodge") && cdTime <= 0)
