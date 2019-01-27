@@ -5,7 +5,7 @@ using UnityEngine;
 public class mapGeneration : MonoBehaviour
 {
     [SerializeField]
-    int width, height, minGroundPasses, maxGroundPasses, groundObjectPercentChance, spawnPercentChance, roomChance, npcChance;
+    int mapMin, mapMax, minGroundPasses, maxGroundPasses, groundObjectPercentChance, spawnPercentChance, roomChance, npcChance;
 
     [SerializeField]
     float terrainOffset;
@@ -13,10 +13,16 @@ public class mapGeneration : MonoBehaviour
     [SerializeField]
     GameObject[] terrainTiles, groundObjects, hubTiles, spawnTile, secretRoom, npcList;
 
+    [SerializeField]
+    int width, height;
+
     public GameObject[] terrain, groundClutter, spawnLocations, hiddenRoom, npcs, hub;
 
     private void Awake()
     {
+        width = Random.Range(mapMin, mapMax);
+        height = Random.Range(mapMin, mapMax);
+
         GenerateTerrain();
         GenerateGroundObjects();
         GenerateSpawnTiles();

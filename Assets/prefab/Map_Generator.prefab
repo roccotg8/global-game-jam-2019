@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773b82b0e318ce8428ee7f2ad5abf030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 10
-  height: 10
+  mapMin: 10
+  mapMax: 25
   minGroundPasses: 2
   maxGroundPasses: 5
   groundObjectPercentChance: 50
