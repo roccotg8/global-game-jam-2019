@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773b82b0e318ce8428ee7f2ad5abf030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapMin: 10
-  mapMax: 25
+  mapMin: 15
+  mapMax: 15
   minGroundPasses: 2
   maxGroundPasses: 5
   groundObjectPercentChance: 50
@@ -64,6 +64,8 @@ MonoBehaviour:
   - {fileID: 4924462463823129883, guid: 3b08d656f84c8e7448b2b99c6e8027ac, type: 3}
   npcList:
   - {fileID: 4780998248787163399, guid: 55a4d841a2212b644acf34f828cd2929, type: 3}
+  width: 0
+  height: 0
   terrain: []
   groundClutter: []
   spawnLocations: []

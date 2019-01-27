@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7747692026908420594}
   - component: {fileID: 8895672342019684789}
+  - component: {fileID: 4769517660755084518}
   m_Layer: 0
   m_Name: npcBunny
   m_TagString: npc
@@ -79,3 +80,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4769517660755084518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780998248787163399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efe52b40e1ca4e498e7ea0a7f1e0cfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

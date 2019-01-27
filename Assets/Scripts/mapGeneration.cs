@@ -24,6 +24,7 @@ public class mapGeneration : MonoBehaviour
         height = Random.Range(mapMin, mapMax);
 
         GenerateTerrain();
+        EditMapBounds();
         GenerateGroundObjects();
         GenerateSpawnTiles();
         GenerateSecretRoom();
@@ -87,6 +88,11 @@ public class mapGeneration : MonoBehaviour
         npcs = GameObject.FindGameObjectsWithTag("npc");
     }
 
+    void EditMapBounds()
+    {
+        
+    }
+
     public void randomInTilePlacement(GameObject[] objects, int percentChance, bool guaranteeOne = false, bool onlyOne = false)
     {
         bool oneExists = false;
@@ -121,7 +127,7 @@ public class mapGeneration : MonoBehaviour
         }
     }
 
-    void GuaranteeOne(GameObject[] objects)
+    public void GuaranteeOne(GameObject[] objects)
     {
         //choose a random tile
         int x = Random.Range(0, width);
