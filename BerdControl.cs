@@ -10,6 +10,8 @@ public class BerdControl : MonoBehaviour
     private GameObject[] objArray;
     private float vertMove, horizMove, cdTime, baseSpeed;
 
+    private GameObject npc;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,11 +54,12 @@ public class BerdControl : MonoBehaviour
         //Anim walk down?
 
 
+
         //Interact Key/ Button
         if (Input.GetButtonDown("Interact"))
         {
             //Check area for any NPC's
-
+            npc.ActivateQuest();
             Debug.Log("Interact");
 
         }
@@ -76,5 +79,17 @@ public class BerdControl : MonoBehaviour
 
             characterSpeed = dodgeSpeed;
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "npc")
+            npc = col.gameObject;
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "npc")
+            npc = null;
     }
 }
