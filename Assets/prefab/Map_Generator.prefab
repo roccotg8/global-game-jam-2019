@@ -51,18 +51,22 @@ MonoBehaviour:
   spawnPercentChance: 10
   roomChance: 2
   npcChance: 10
-  npcItemChance: 20
   terrainOffset: 4.7
   terrainTiles:
   - {fileID: 6625294811691108201, guid: 1711de5ab550c8b44b0ca0fb55644bac, type: 3}
   groundObjects:
   - {fileID: 2578637898747363479, guid: 17446845f3c29cf499228b7b362cd5e4, type: 3}
+  hubTiles:
+  - {fileID: 789987330441875729, guid: 38aa64c1419064141acb5f7153d172b0, type: 3}
   spawnTile:
   - {fileID: 1848258990351307536, guid: 707ca0e959e41fa46b6d1cdff21bf985, type: 3}
   secretRoom:
   - {fileID: 4924462463823129883, guid: 3b08d656f84c8e7448b2b99c6e8027ac, type: 3}
   npcList:
   - {fileID: 4780998248787163399, guid: 55a4d841a2212b644acf34f828cd2929, type: 3}
-  npcItemList:
-  - {fileID: 2952517743225301714, guid: 9162ec14366ccaf47babb9d80874ad93, type: 3}
-  hubTile: {fileID: 789987330441875729, guid: 38aa64c1419064141acb5f7153d172b0, type: 3}
+  terrain: []
+  groundClutter: []
+  spawnLocations: []
+  hiddenRoom: []
+  npcs: []
+  hub: []
